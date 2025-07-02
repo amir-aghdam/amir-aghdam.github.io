@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://amir-aghdam.github.io//sitemap.xml
+Sitemap: https://amir-aghdam.github.io/sitemap.xml
