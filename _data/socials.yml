@@ -46,6 +46,6 @@ scholar_userid: RUtOILIAAAAJ # your Google Scholar ID
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
 custom_social: # can be any name here other than the ones already defined above
-  logo: medium.png # can be png, svg, jpg
+  logo: assets/img/medium.png # can be png, svg, jpg
   title: Medium
   url: https://medium.com/@amir.aghdam
