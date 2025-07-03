@@ -1,80 +1,101 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: Django Image Processor
+description: A cloud-hosted web app for applying image filters in real-time using Django and Pillow.
+img: assets/img/projects/image_processor-demo.png
+importance: 4
+category: Web
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+📂 [View the code on GitHub](https://github.com/amir-aghdam/Image-Editor-AWS)  
+---
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## 🎓 About the Project
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+This project was developed as part of the **Cloud Computing** course at **Temple University**. It explores deploying a responsive web-based image processing tool on a **EC2 instance of Amazon AWS servers** using Django.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+The application lets users upload images and apply a set of filters including grayscale, sepia, posterize, blur, and edge detection. Results are displayed side-by-side and can be downloaded directly.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+---
 
+## 🖼️ Interface Preview
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/image-processor-demo.png" title="Upload and filter selection" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
 
-{% endraw %}
+<div class="caption">
+  Image upload form with filter options.
+</div>
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/convert-demo.png" title="Original vs Processed" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+
+<div class="caption">
+  Processed output displayed alongside the original image.
+</div>
+
+
+---
+
+## 🔧 Technology Stack
+
+- **Backend:** Django, Pillow
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap 5
+- **Deployment:** AWS EC2 (Ubuntu 22.04)
+- **Web Server:** Nginx
+- **App Server:** Gunicorn
+- **Database:** SQLite (lightweight for demo purposes)
+
+---
+
+## 🔄 Workflow
+
+1. User uploads an image through the web UI.
+2. The backend handles validation and stores the image.
+3. Based on user selection, the filter is applied using Pillow.
+4. Filtered image is saved and previewed.
+5. A download link is offered for the processed result.
+
+---
+
+## ☁️ Cloud Deployment
+
+The full stack runs on an **AWS EC2 instance** with the following setup:
+
+- 🐍 Python + Django app running in virtualenv
+- 🔥 Gunicorn as WSGI server
+- 🧱 Nginx reverse proxy to serve static/media files
+- 💾 Database: SQLite (lightweight for demo purposes)
+
+
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/architecture.png" title="System Architecture" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+
+<div class="caption">
+  System architecture showing user interaction with Django app through Nginx and Gunicorn on AWS EC2.
+</div>
+
+---
+
+## 📋 Features
+
+- Upload images (JPG, PNG, etc.)
+- Saves each users processed images in database.
+- Apply filters instantly with visual feedback
+- On-demand download of output
+- Responsive and simple UI
+
+---
+
+## 🧪 Notes
+
+This project demonstrates the end-to-end development and deployment of a real-time image processing web app using cloud-native tools. The front-end design and boilerplate code has been completed with assitance of Replit.

@@ -1,81 +1,100 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Related Work Co-pilot
+description: An AI-powered assistant for drafting related work sections, combining large language models and arXiv with a human-in-the-loop approach for structured, iterative refinement.
+img: assets/img/projects/related_work_copilot.png
 importance: 3
-category: work
+category: AI
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+📂 [View the code on GitHub](https://github.com/amir-aghdam/Research-co-pilot)
+🎬 [Watch Demo Video](https://github.com/amir-aghdam/amir-aghdam.github.io/tree/main/assets/video/related-work-demo.mp4)
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+<video width="800" controls>
+  <source src="{{ 'assets/video/related-work-demo.mp4' | relative_url }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## 🎯 Motivation
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+As a researcher, I often found myself overwhelmed while writing the *related work* section — juggling keywords, chasing arXiv threads, and trying to structure something meaningful.  
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+Tools like OpenAI’s Deep Research are fascinating, but I craved **more control**, **more transparency**, and a process that didn’t write *for* me, but *with* me.  
+
+That’s why I tried building **Related Work Co-pilot** — an AI-powered assistant that lets you drive every decision: from finding papers to shaping your final draft.
+
+> ⚙️ This project is a personal response to the automation trend: proving that AI doesn’t have to replace us — it can *empower* us, especially in the most nuanced parts of research writing.
+
+## 👨‍🔬 What It Is
+
+Related Work Co-pilot helps you:
+
+- ✅ Define your topic with the help of AI-suggested, editable keywords  
+- 📚 Find relevant arXiv papers through RAG-style iterative refinement  
+- 🧠 Categorize those papers into meaningful sections using LLMs  
+- ✍️ Draft a related work section — in **Text** or **LaTeX** — with your guidance  
+- 🔁 Refine that draft interactively until it truly reflects *your voice*  
+- 🧾 Export your citations in BibTeX, ready for submission
+
+Unlike tools that push out paragraphs with minimal oversight, this co-pilot **keeps you in control** — step-by-step with unlimted iterative refinements per step.
+
+## ✨ Why This Matters
+
+🚫 Most research-assist tools are "black boxes."  
+✅ This one invites you to **steer the wheel**.  
+
+I followed my own workflow for conducting literature review. This tool halves the time we spend searching and drafting — and gives better structure and citation accuracy.
+
+## 🧭 Workflow Overview
+
+### 📝 1. Define Your Topic & Keywords  
+- Add your topic  
+- Enter or AI-suggest keywords  
+- Provide anchor papers or DOIs  
+- Click **Find Papers**
+
+### 📚 2. Explore & Select Papers  
+- Search results from **arXiv**  
+- Browse abstracts, select papers  
+- Use AI to refine the search based on selections  
+- Iterate until satisfied
+
+### 🗂️ 3. Structure with AI Help  
+- Choose number of sections  
+- LLM proposes titles & descriptions  
+- Automatically assigns papers  
+- You revise everything if needed
+
+### ✍️ 4. Draft & Refine  
+- Draft in **LaTeX** or plain text  
+- Ask for refinements:
+  - "Make section 1 more critical"
+  - "Expand on paper X"
+- Restore earlier versions
+
+### 📄 5. Export & Cite  
+- Copy or download the draft  
+- Get BibTeX entries for selected papers  
+- Ready for integration into your paper
+
+## 🖼️ Interface Preview
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/related_work_copilot.png" title="Full control at every stage: Search, Categorize, Draft, Refine" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
+
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+  Designed for transparency and flexibility — choose papers, organize your structure, and edit drafts iteratively.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## 🧪 Technologies Used
 
-{% raw %}
+- 🧠 **AI Providers**: Google Gemini & OpenAI  
+- 📚 **Paper Data**: arXiv API  
+- 🛠️ **Frontend**: React, Tailwind CSS  
+- 🚀 **Build**: Vite, Node.js
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
 
-{% endraw %}
+<p><strong>Note:</strong> The components of this project were built with the assistance of <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>.</p>

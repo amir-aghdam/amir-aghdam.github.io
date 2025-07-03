@@ -5,7 +5,6 @@ description: "A deep learning project focused on uncertainty-aware classificatio
 img: assets/img/projects/evidential_classification.png
 importance: 2
 category: AI
-giscus_comments: true
 ---
 > 📄 [Read the full project report](https://github.com/amir-aghdam/amir-aghdam.github.io/tree/main/assets/pdf/evidential_classification.pdf)
 > 📂 Code available at: [https://github.com/amir-aghdam/evidential-classification](https://github.com/amir-aghdam/evidential-classification)
