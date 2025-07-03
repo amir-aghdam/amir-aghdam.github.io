@@ -1,81 +1,94 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: "Beyond Confidence: Evidential Learning for Robust Classification"
+description: "A deep learning project focused on uncertainty-aware classification using Dirichlet-based evidential models improving F1 score by %10."
+img: assets/img/projects/evidential_classification.png
 importance: 2
-category: work
+category: AI
 giscus_comments: true
 ---
+> 📄 [Read the full project report](assets/pdf/evidential_classification.pdf)
+> 📂 Code available at: [https://github.com/aghdamamir/evidential-classification](https://github.com/aghdamamir/evidential-classification)
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Deep neural networks are often **overconfident and unaware of their own limitations**, especially in uncertain or ambiguous situations. This project takes a bold step forward by applying **evidential deep learning** to visual classification — combining **transformer-based representation learning** with **probabilistic uncertainty modeling**.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+We introduce a novel pipeline built on **DINO v2 Vision Transformers**, replacing standard classification heads with a Dirichlet-based evidential output. This empowers the model not only to predict, but to **quantify how much it trusts its own decisions** — an essential feature for safety-critical or fine-grained tasks.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
+
+### 🚀 Quick Highlight
+
+> **Achieved +4.1% absolute accuracy gain** and vastly improved uncertainty calibration over standard deep networks — showing promise for real-world deployment where reliability matters.
+
+---
+
+### 🌼 Dataset and Task
+
+We validated our approach on a challenging **fine-grained flower classification task**, known for subtle inter-class differences. This serves as a perfect benchmark for testing uncertainty-aware methods.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/flower_examples.png" title="Sample images from dataset" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+  Samples from the Flowers dataset, illustrating subtle inter-class differences.
 </div>
+
+---
+
+### 🧠 Architecture and Training
+
+We adapt a pretrained **DINO v2 ViT-S/14** and append an evidential layer. The model is trained using an **uncertainty-regularized evidential loss**, allowing it to estimate both **class prediction** and **confidence bounds**. Our architecture adds an evidential head on top of a frozen DINO v2 encoder, trained with a KL-regularized loss function.
+
+---
+
+### 📊 Performance
+
+| Metric     | Cross-Entropy | Evidential |
+|------------|----------------|-------------|
+| Accuracy   | 94.55%         | ⭐ **98.69%** |
+| Precision  | 86.32%         | **96.55%**  |
+| Recall     | 86.07%         | **96.61%**  |
+| F1 Score   | 86.14%         | **96.55%**  |
+
+In addition to numerical gains, the model **calibrates its uncertainty**, lowering trust in incorrect predictions and raising confidence only when justified.
+
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/evidential_classification.png" title="Uncertainty scatter plot" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  Evidential models express higher uncertainty on incorrect predictions — a crucial trait missing in standard classifiers.
+</div>
 
-{% endraw %}
+---
+
+### 🎯 Visual Interpretability
+
+Grad-CAM and t-SNE visualizations show that evidential models develop more semantically meaningful feature spaces and focus on more relevant image regions.
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/gradcam.png" title="GradCAM visualizations" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">
+  Grad-CAM reveals sharper and more interpretable attention regions in evidential networks.
+</div>
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/projects/t-sne.png" title="t-SNE embeddings" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">
+  Clearer cluster formation in evidential models shows more structured representation learning.
+</div>
+
+---
+
+### 💡 Why This Matters
+
+This work demonstrates that **uncertainty isn't just a bonus — it's essential**. By embedding calibrated confidence into model outputs, we build a foundation for safer, more responsible AI systems in domains like **healthcare, robotics, autonomous driving, and scientific discovery**, where “I don't know” is often the most important answer.
