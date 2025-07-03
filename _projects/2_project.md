@@ -7,7 +7,7 @@ importance: 2
 category: AI
 ---
 > 📄 [Read the full project report](https://github.com/amir-aghdam/amir-aghdam.github.io/tree/main/assets/pdf/evidential_classification.pdf)
-> 📂 Code available at: [https://github.com/amir-aghdam/evidential-classification](https://github.com/amir-aghdam/evidential-classification)
+📂 Code available at: [https://github.com/amir-aghdam/evidential-classification](https://github.com/amir-aghdam/evidential-classification)
 
 Deep neural networks are often **overconfident and unaware of their own limitations**, especially in uncertain or ambiguous situations. This project takes a bold step forward by applying **evidential deep learning** to visual classification — combining **transformer-based representation learning** with **probabilistic uncertainty modeling**.
 

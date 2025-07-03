@@ -2,7 +2,7 @@
 layout: page
 title: Django Image Processor
 description: A cloud-hosted web app for applying image filters in real-time using Django and Pillow.
-img: assets/img/projects/image_processor-demo.png
+img: assets/img/projects/image-processor-demo.png
 importance: 4
 category: Web
 ---
