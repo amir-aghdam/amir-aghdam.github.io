@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-publications",
-          title: "Publications",
-          description: "My publications in reversed chronological order.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
         },{id: "nav-projects",
           title: "Projects",
           description: "The Collection of my Selected Projects",
@@ -30,8 +23,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "My publications in reversed chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
         },{id: "nav-cv",
-          title: "cv",
+          title: "CV",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -53,8 +53,8 @@ ninja.data = [{
           description: "A zero-shot framework that uses LLM-generated sub-action scripts and sequence alignment to classify fine-grained actions in video without any video–text supervision.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-beyond-confidence-evidential-learning-for-robust-classification",
-          title: 'Beyond Confidence: Evidential Learning for Robust Classification',
+            },},{id: "projects-evidential-learning-for-robust-classification",
+          title: 'Evidential Learning for Robust Classification',
           description: "A deep learning project focused on uncertainty-aware classification using Dirichlet-based evidential models improving F1 score by %10.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
@@ -100,18 +100,18 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/amir--aghdam", "_blank");
         },
       },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0009-0009-0840-6711", "_blank");
+        },
+      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=RUtOILIAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://medium.com/@amir.aghdam", "_blank");
         },
       },{
       id: 'light-theme',
