@@ -100,18 +100,18 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/amir--aghdam", "_blank");
         },
       },{
-        id: 'social-orcid',
-        title: 'ORCID',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://orcid.org/0009-0009-0840-6711", "_blank");
-        },
-      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=RUtOILIAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://medium.com/@amir.aghdam", "_blank");
         },
       },{
       id: 'light-theme',
