@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "Beyond Confidence: Evidential Learning for Robust Classification"
+title: "Evidential Learning for Robust Classification"
 description: "A deep learning project focused on uncertainty-aware classification using Dirichlet-based evidential models improving F1 score by %10."
 img: assets/img/projects/evidential_classification.png
 importance: 2
 category: AI
 ---
-> 📄 [Read the full project report](https://github.com/amir-aghdam/amir-aghdam.github.io/tree/main/assets/pdf/evidential_classification.pdf)
-📂 Code available at: [https://github.com/amir-aghdam/evidential-classification](https://github.com/amir-aghdam/evidential-classification)
+> 📄 [Read the full project report](https://raw.githubusercontent.com/amir-aghdam/amir-aghdam.github.io/main/assets/pdf/evidential_classification.pdf) <br>
+> 📂 Code available at: [https://github.com/amir-aghdam/evidential-classification](https://github.com/amir-aghdam/evidential-classification)
 
 Deep neural networks are often **overconfident and unaware of their own limitations**, especially in uncertain or ambiguous situations. This project takes a bold step forward by applying **evidential deep learning** to visual classification — combining **transformer-based representation learning** with **probabilistic uncertainty modeling**.
 
