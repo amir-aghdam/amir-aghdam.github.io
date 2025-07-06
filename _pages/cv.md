@@ -1,5 +1,5 @@
 ---
-layout: cv
+layout: page
 permalink: /cv/
 title: CV
 nav: true
@@ -10,5 +10,8 @@ description:
 #   sidebar: left
 ---
 
-Please find the embedded CV below:
-<embed src="https://amir-aghdam.github.io/assets/pdf/CV_Jul2025.pdf" type="application/pdf" style="width:100%; height:1000px; margin-left: auto; margin-right: auto;" frameborder="0"/>
+The embedded PDF below provides a detailed overview of my academic background, research experience, and technical expertise.
+
+If the embedded viewer does not load properly in your browser, you can access the full document directly [here](https://amir-aghdam.github.io/assets/pdf/CV_Jul2025.pdf){:target="_blank"}.
+  
+<embed src="{{ 'https://amir-aghdam.github.io/assets/pdf/CV_Jul2025.pdf' | relative_url }}" type="application/pdf" style="width:100%; height:1000px; margin-top: 2rem;" />
